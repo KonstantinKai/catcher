@@ -6,11 +6,8 @@ main() {
     EmailManualHandler(["recipient@email.com"]),
     ConsoleHandler()
   ]);
-  CatcherOptions releaseOptions = CatcherOptions(NotificationReportMode(), [
-    EmailManualHandler(["recipient@email.com"])
-  ]);
 
-  Catcher(MyApp(), debugConfig: debugOptions, releaseConfig: releaseOptions);
+  Catcher(MyApp(), debugConfig: debugOptions);
 }
 
 class MyApp extends StatefulWidget {

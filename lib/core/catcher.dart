@@ -4,8 +4,6 @@ import 'dart:isolate';
 
 import 'package:catcher/core/application_profile_manager.dart';
 import 'package:catcher/handlers/report_handler.dart';
-import 'package:catcher/mode/dialog_report_mode.dart';
-import 'package:catcher/mode/page_report_mode.dart';
 import 'package:catcher/model/application_profile.dart';
 import 'package:catcher/model/catcher_options.dart';
 import 'package:catcher/mode/report_mode_action_confirmed.dart';
@@ -178,7 +176,7 @@ class Catcher with ReportModeAction {
         androidDeviceInfo.version.incremental;
     _deviceParameters["versionPreviewSdk"] =
         androidDeviceInfo.version.previewSdkInt;
-    _deviceParameters["versionRelase"] = androidDeviceInfo.version.release;
+    _deviceParameters["versionRelease"] = androidDeviceInfo.version.release;
     _deviceParameters["versionSdk"] = androidDeviceInfo.version.sdkInt;
     _deviceParameters["versionSecurityPatch"] =
         androidDeviceInfo.version.securityPatch;
@@ -337,7 +335,7 @@ class Catcher with ReportModeAction {
         _logger.warning(
             "Error occured in ${handler.toString()}: ${handlerError.toString()}");
       }).then((result) {
-        print("Report result: " + result.toString());
+        if (enableLogger) print("Report result: " + result.toString());
         if (!result) {
           _logger.warning("${handler.toString()} failed to report error");
         } else {

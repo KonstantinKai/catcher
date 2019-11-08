@@ -54,9 +54,7 @@ class ChildWidget extends StatelessWidget {
   }
 
   permission() async {
-    Map<PermissionGroup, PermissionStatus> permissions =
-        await PermissionHandler().requestPermissions([PermissionGroup.storage]);
-    //bool isShown = await PermissionHandler().shouldShowRequestPermissionRationale(PermissionGroup.storage);
+    await PermissionHandler().requestPermissions([PermissionGroup.storage]);
   }
 
   generateError() async {
