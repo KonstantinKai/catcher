@@ -132,7 +132,7 @@ class Catcher with ReportModeAction {
 
   void _configureLogger() {
     if (enableLogger) {
-      Logger.root.level = Level.ALL;
+      Logger.root.level = Level.CONFIG;
       Logger.root.onRecord.listen((LogRecord rec) {
         print(
             '[${rec.time} | ${rec.loggerName} | ${rec.level.name}] ${rec.message}');
